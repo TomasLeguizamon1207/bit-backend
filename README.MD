@@ -31,3 +31,6 @@ La API fue probada utilizando **Postman** y ejecutada en entorno local con **Nod
 - Express.js
 - Morgan 
 - Nodemon 
+
+---
+# Desarrollado por Tomás Leguizamón ("https://github.com/TomasLeguizamon1207")
