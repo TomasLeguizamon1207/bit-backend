@@ -33,4 +33,5 @@ La API fue probada utilizando **Postman** y ejecutada en entorno local con **Nod
 - Nodemon 
 
 ---
-# Desarrollado por Tomás Leguizamón ("https://github.com/TomasLeguizamon1207")
+# Desarrollado por:
+### Tomás Leguizamón ("https://github.com/TomasLeguizamon1207")
