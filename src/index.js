@@ -1,11 +1,11 @@
 import express from "express";
 import morgan from "morgan";
 
-const app = express();
+const server = express();
 const port = 4000;
 
-app.use(morgan("dev"));
-app.use(express.json());
+server.use(morgan("dev"));
+server.use(express.json());
 
 const flights = [
   {
@@ -26,11 +26,11 @@ const flights = [
   }
 ];
 
-app.get("/", (req, res) => {
+server.get("/", (req, res) => {
   res.json({ message: "API works!" });
 });
 
-app.post("/flights", (req, res) => {
+server.post("/flights", (req, res) => {
   const { flightNumber, origin, destination, departureTime, status } = req.body;
 
   if (!flightNumber || !origin || !destination || !departureTime || !status) {
@@ -50,11 +50,11 @@ app.post("/flights", (req, res) => {
   res.status(201).json({ message: "Vuelo agregado", data: newFlight });
 });
 
-app.get("/flights", (req, res) => {
+server.get("/flights", (req, res) => {
   res.status(200).json({ message: "Lista de vuelos", data: flights });
 });
 
-app.get("/flights/:id", (req, res) => {
+server.get("/flights/:id", (req, res) => {
   const flightId = parseInt(req.params.id);
   const flight = flights.find(f => f.id === flightId);
 
@@ -65,7 +65,7 @@ app.get("/flights/:id", (req, res) => {
   }
 });
 
-app.put("/flights/:id", (req, res) => {
+server.put("/flights/:id", (req, res) => {
   const flightId = parseInt(req.params.id);
   const flight = flights.find(f => f.id === flightId);
 
@@ -83,7 +83,7 @@ app.put("/flights/:id", (req, res) => {
   }
 });
 
-app.delete("/flights/:id", (req, res) => {
+server.delete("/flights/:id", (req, res) => {
   const flightId = parseInt(req.params.id);
   const index = flights.findIndex(f => f.id === flightId);
 
@@ -95,7 +95,6 @@ app.delete("/flights/:id", (req, res) => {
   }
 });
 
-// Servidor
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Servidor de vuelos corriendo en http://localhost:${port}`);
 });
