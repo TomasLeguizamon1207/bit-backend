@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/TomasLeguizamon1207/bit-backend#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.2"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
